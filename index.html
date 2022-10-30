@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Project</title>
+    <script
+      src="https://kit.fontawesome.com/a591f954a9.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link href="src/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="app mx-auto my-5 p-4 bg-light border rounded-3"
+        style="width: 600px"
+      >
+        <div class="header">
+          <div class="row align-items-center">
+            <div class="col">
+              <div class="current-city">
+                <h1 id="heading">Kyiv</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="date">
+              <h2 class="day-week" id="current-time"></h2>
+            </div>
+            <div>
+              <div class="forecast-short">
+                <h3>
+                  <a href="Today"> Today</a>
+                </h3>
+                <h3>
+                  <a href="Tomorrow"> Tomorrow </a>
+                </h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="search-bar">
+              <form id="search">
+                <input
+                  type="text"
+                  id="search-input"
+                  placeholder="Search your city..."
+                />
+                <input type="submit" value="🔎" />
+              </form>
+            </div>
+            <div class="navigation">
+              <ul class="city-suggestion">
+                <li class="city">
+                  <a href="My location" id="my-location"> My location </a>
+                </li>
+                <li class="city">
+                  <a href="Odesa">Odesa</a>
+                </li>
+                <li class="city">
+                  <a href="Lviv">Lviv</a>
+                </li>
+                <li class="city">
+                  <a href="Dnipro"> Dnipro </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="conditions">
+          <div class="row align-items-center">
+            <div class="col-3">
+              <div class="current-temp">
+                <span class="current-temp" id="current-temp"></span>
+                <span>
+                  <a href="#" class="unit" id="cUnit">°C</a>
+
+                  <a href="#" class="unit" id="fUnit"></a>
+                </span>
+                <br />
+                <i class="fa-solid fa-cloud-sun icon"></i>
+              </div>
+            </div>
+            <div class="col-5">
+              <div class="current-cond">
+                <p>
+                  <span id="conditions"></span>
+                  <br />
+                  feels like <span id="feels-like"></span>°C
+                  <br />
+                  humidity: <span id="humidity"></span>%
+                  <br />
+                  wind: <span id="wind"></span> m/s
+                </p>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="current-forecast">
+                <p>
+                  <i class="fa-solid fa-cloud-sun-rain icon"></i>
+                  morning +12°...+13°
+                  <br />
+                  <i class="fa-solid fa-cloud-sun-rain icon"></i>
+                  afternoon +14°...+17°
+                  <br />
+                  <i class="fa-solid fa-cloud icon"></i>
+                  evening +10°...+14°
+                  <br />
+                  <i class="fa-solid fa-cloud-moon-rain icon"></i>
+                  night +9°...+10°
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="forecast-long">
+          <div class="row">
+            <div class="col-2">
+              <div class="forecast">
+                <h5>Mon</h5>
+                <div class="icon">
+                  <i class="fa-solid fa-cloud-showers-heavy"></i>
+                </div>
+                <div class="max-temp">+16°</div>
+                <div class="min-temp">+9°</div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="forecast">
+                <h5>Tue</h5>
+                <div class="icon">
+                  <i class="fa-solid fa-cloud-sun"></i>
+                </div>
+                <div class="max-temp">+12°</div>
+                <div class="min-temp">+8°</div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="forecast">
+                <h5>Wed</h5>
+                <div class="icon">
+                  <i class="fa-solid fa-cloud-sun-rain"></i>
+                </div>
+                <div class="max-temp">+14°</div>
+                <div class="min-temp">+8°</div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="forecast">
+                <h5>Thu</h5>
+                <div class="icon">
+                  <i class="fa-solid fa-cloud-showers-heavy"></i>
+                </div>
+                <div class="max-temp">+14°</div>
+                <div class="min-temp">+8°</div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="forecast">
+                <h5>Fri</h5>
+                <div class="icon">
+                  <i class="fa-solid fa-cloud-sun"></i>
+                </div>
+                <div class="max-temp">+13°</div>
+                <div class="min-temp">+7°</div>
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="forecast">
+                <h5>Sat</h5>
+                <div class="icon">
+                  <i class="fa-solid fa-sun"></i>
+                </div>
+                <div class="max-temp">+13°</div>
+                <div class="min-temp">+8°</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
