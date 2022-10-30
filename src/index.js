@@ -76,6 +76,7 @@ function getMyLocation(event) {
 let myLocation = document.querySelector("#my-location");
 myLocation.addEventListener("click", getMyLocation);
 
+getLocation("Willow Creek");
 // function changeToCelsius(event) {
 //   event.preventDefault();
 //   let cUnit = 17;
