@@ -44,35 +44,46 @@
             <div class="date">
               <h2 class="day-week" id="current-time"></h2>
             </div>
-            <div>
-              <div class="forecast-short">
-                <h3>
-                  <a href="Today"> Today</a>
-                </h3>
-                <h3>
-                  <a href="Tomorrow"> Tomorrow </a>
-                </h3>
-              </div>
-            </div>
           </div>
           <div class="col-6">
-            <div class="search-bar">
-              <form id="search">
+            <form id="search">
+              <div class="input-group">
                 <input
                   type="text"
                   id="search-input"
+                  class="form-control"
                   placeholder="Search your city..."
                 />
-                <input type="submit" value="🔎" />
-              </form>
+                <button
+                  class="btn btn-outline-secondary"
+                  type="button"
+                  id="button-addon2"
+                >
+                  🔎
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="forecast-short">
+              <h3>
+                <a href="Today"> Today</a>
+              </h3>
+              <h3>
+                <a href="Tomorrow"> Tomorrow </a>
+              </h3>
             </div>
+          </div>
+          <div class="col-6">
             <div class="navigation">
               <ul class="city-suggestion">
                 <li class="city">
                   <a href="My location" id="my-location"> My location </a>
                 </li>
                 <li class="city">
-                  <a href="Odesa" id="odesa-location">Odesa</a>
+                  <a href="" id="odesa-location">Odesa</a>
                 </li>
                 <li class="city">
                   <a href="Lviv" id="lviv-location">Lviv</a>
@@ -84,7 +95,6 @@
             </div>
           </div>
         </div>
-
         <div class="conditions">
           <div class="row align-items-center">
             <div class="col-3">

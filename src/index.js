@@ -58,7 +58,7 @@ function searchCity(event) {
 }
 
 let searchForm = document.querySelector("#search");
-searchForm.addEventListener("submit", searchCity);
+searchForm.addEventListener("click", searchCity);
 
 function getMyCity(position) {
   let units = "metric";
