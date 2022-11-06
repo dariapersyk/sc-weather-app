@@ -31,6 +31,7 @@ function showConditions(response) {
   let feeling = document.querySelector("#feels-like");
   let conditions = document.querySelector("#conditions");
   let currentDate = document.querySelector("#current-time");
+  let icon = document.querySelector("#current-icon");
 
   currentCity.innerHTML = response.data.city;
   currentTemperature.innerHTML = Math.round(response.data.temperature.current);
@@ -39,6 +40,8 @@ function showConditions(response) {
   feeling.innerHTML = Math.round(response.data.temperature.feels_like);
   conditions.innerHTML = response.data.condition.description;
   currentDate.innerHTML = formatDate(response.data.time * 1000);
+  icon.setAttribute("src", response.data.condition.icon_url);
+  icon.setAttribute("alt", response.data.condition.icon);
 }
 
 function getLocation(city) {
