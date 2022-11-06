@@ -28,7 +28,7 @@
     <div class="container">
       <div
         class="app mx-auto my-5 p-4 bg-light border rounded-3"
-        style="width: 600px"
+        style="width: 550px"
       >
         <div class="header">
           <div class="row align-items-center">
@@ -40,12 +40,12 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-6">
+          <div class="col-5">
             <div class="date">
               <h2 class="day-week" id="current-time"></h2>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-6 search-group">
             <form id="search">
               <div class="input-group">
                 <input
@@ -54,90 +54,70 @@
                   class="form-control"
                   placeholder="Search your city..."
                 />
-                <button
-                  class="btn btn-outline-secondary"
-                  type="button"
-                  id="button-addon2"
-                >
-                  🔎
+                <button class="btn btn-outline-secondary" type="button">
+                  Go!
                 </button>
               </div>
             </form>
           </div>
+          <div class="col-1 location-button">
+            <button
+              type="button"
+              class="btn btn-outline-secondary my-location"
+              id="my-location"
+            >
+              <i class="fa-solid fa-location-dot icon"></i>
+            </button>
+          </div>
         </div>
         <div class="row">
-          <div class="col-6">
+          <div class="col-5">
             <div class="forecast-short">
               <h3>
-                <a href="Today"> Today</a>
+                <a href="Today" class="link"> Today</a>
               </h3>
               <h3>
-                <a href="Tomorrow"> Tomorrow </a>
+                <a href="Tomorrow" class="link"> Tomorrow </a>
               </h3>
             </div>
           </div>
-          <div class="col-6">
-            <div class="navigation">
-              <ul class="city-suggestion">
-                <li class="city">
-                  <a href="My location" id="my-location"> My location </a>
-                </li>
-                <li class="city">
-                  <a href="" id="odesa-location">Odesa</a>
-                </li>
-                <li class="city">
-                  <a href="Lviv" id="lviv-location">Lviv</a>
-                </li>
-                <li class="city">
-                  <a href="Dnipro" id="dnipro-location"> Dnipro </a>
-                </li>
-              </ul>
-            </div>
+          <div class="col-7 navigation">
+            <ul class="city-suggestion">
+              <li class="city">
+                <a href="" class="link" id="kyiv-location">Kyiv</a>
+              </li>
+              <li class="city">
+                <a href="" class="link" id="odesa-location">Odesa</a>
+              </li>
+              <li class="city">
+                <a href="Lviv" class="link" id="lviv-location">Lviv</a>
+              </li>
+              <li class="city">
+                <a href="Dnipro" class="link" id="dnipro-location"> Dnipro </a>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="conditions">
           <div class="row align-items-center">
-            <div class="col-3">
-              <div class="current-temp">
-                <span class="current-temp" id="current-temp"></span>
-                <span
-                  ><a href="#" class="unit" id="cUnit">°C |</a
-                  ><a href="#" class="unit" id="fUnit">°F</a></span
-                >
-                <div class="conditions-img">
-                  <img src="" id="current-icon" alt="" />
-                </div>
-              </div>
+            <div class="col-3 conditions-img">
+              <img src="" id="current-icon" alt="" />
             </div>
-            <div class="col-5">
-              <div class="current-cond">
-                <p>
-                  <span id="conditions"></span>
-                  <br />
-                  feels like <span id="feels-like"></span>°C
-                  <br />
-                  humidity: <span id="humidity"></span>%
-                  <br />
-                  wind: <span id="wind"></span> m/s
-                </p>
-              </div>
+            <div class="col-4 current-temp">
+              <span class="current-temp" id="current-temp"></span>
+              <span
+                ><a href="#" class="unit" id="cUnit">°C |</a
+                ><a href="#" class="unit" id="fUnit">°F</a></span
+              >
             </div>
-            <div class="col-4">
-              <div class="current-forecast">
-                <p>
-                  <i class="fa-solid fa-cloud-sun-rain icon"></i>
-                  morning +12°...+13°
-                  <br />
-                  <i class="fa-solid fa-cloud-sun-rain icon"></i>
-                  afternoon +14°...+17°
-                  <br />
-                  <i class="fa-solid fa-cloud icon"></i>
-                  evening +10°...+14°
-                  <br />
-                  <i class="fa-solid fa-cloud-moon-rain icon"></i>
-                  night +9°...+10°
-                </p>
-              </div>
+            <div class="col-5 current-cond">
+              <span id="conditions"></span>
+              <br />
+              feels like <span id="feels-like"></span>°C
+              <br />
+              humidity: <span id="humidity"></span>%
+              <br />
+              wind: <span id="wind"></span> m/s
             </div>
           </div>
         </div>
@@ -208,7 +188,10 @@
         </div>
       </div>
       <footer>
-        <a href="https://github.com/dariapersyk/sc-weather-app" target="_blank"
+        <a
+          href="https://github.com/dariapersyk/sc-weather-app"
+          target="_blank"
+          class="link"
           >Open-source code</a
         >
         by Daria Persyk

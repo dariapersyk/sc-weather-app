@@ -105,6 +105,15 @@ function getDniproLocation(event) {
 let dniproCity = document.querySelector("#dnipro-location");
 dniproCity.addEventListener("click", getDniproLocation);
 
+function getKyivLocation(event) {
+  event.preventDefault();
+  let city = "Kyiv";
+  getLocation(city);
+}
+
+let kyivCity = document.querySelector("#kyiv-location");
+kyivCity.addEventListener("click", getKyivLocation);
+
 getLocation("Kyiv");
 // function changeToCelsius(event) {
 //   event.preventDefault();

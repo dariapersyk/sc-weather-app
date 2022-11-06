@@ -40,9 +40,27 @@ footer {
   font-size: 0.8rem;
 }
 
+.app {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgba(216, 241, 230, 0.46) 0.1%,
+    rgba(233, 226, 226, 0.28) 90.1%
+  );
+  box-shadow: 0px 0px 7px #d8d5e6;
+}
+
+.search-group,
+.location-button {
+  padding: 0 0.2rem;
+}
+
 .city-suggestion {
-  margin: 0 auto;
-  padding-left: 0%;
+  padding-right: 0;
+  text-align: right;
+}
+
+.navigation {
+  padding-right: 0;
 }
 
 .date {
@@ -60,11 +78,13 @@ footer {
 }
 
 .current-temp {
-  font-size: 3rem;
-  text-align: right;
+  font-size: 4rem;
+  padding-left: 0;
 }
 .current-cond {
-  font-weight: 300;
+  font-weight: 400;
+  padding: 0 1.2rem;
+  margin-bottom: 0;
 }
 
 .unit {
@@ -79,7 +99,7 @@ footer {
   text-align: center;
 }
 .icon {
-  color: #2f6b77;
+  color: #744986;
 }
 
 .min-temp {
@@ -87,10 +107,13 @@ footer {
 }
 
 .conditions-img {
-  text-align: center;
-  font-size: 3.2rem;
+  padding-right: 0;
 }
 
-.navigation {
-  padding-left: 0.5rem;
+.link {
+  color: #744986;
+}
+
+.link:hover {
+  color: #e886a7;
 }
