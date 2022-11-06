@@ -1,5 +1,5 @@
-function showTime() {
-  let currentDate = new Date();
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let days = [
     "Sunday",
     "Monday",
@@ -10,9 +10,9 @@ function showTime() {
     "Saturday",
   ];
 
-  let day = days[currentDate.getDay()];
-  let hours = currentDate.getHours();
-  let minutes = currentDate.getMinutes();
+  let day = days[date.getDay()];
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
 
   if (hours < 10) {
     hours = `0${hours}`;
@@ -20,11 +20,8 @@ function showTime() {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-
-  let currentTime = document.querySelector("#current-time");
-  currentTime.innerHTML = `${day}, ${hours}:${minutes}`;
+  return `${day}, ${hours}:${minutes}`;
 }
-showTime();
 
 function showConditions(response) {
   let currentCity = document.querySelector("#heading");
@@ -33,6 +30,7 @@ function showConditions(response) {
   let humidity = document.querySelector("#humidity");
   let feeling = document.querySelector("#feels-like");
   let conditions = document.querySelector("#conditions");
+  let currentDate = document.querySelector("#current-time");
 
   currentCity.innerHTML = response.data.city;
   currentTemperature.innerHTML = Math.round(response.data.temperature.current);
@@ -40,6 +38,7 @@ function showConditions(response) {
   humidity.innerHTML = response.data.temperature.humidity;
   feeling.innerHTML = Math.round(response.data.temperature.feels_like);
   conditions.innerHTML = response.data.condition.description;
+  currentDate.innerHTML = formatDate(response.data.time * 1000);
 }
 
 function getLocation(city) {
@@ -60,8 +59,8 @@ searchForm.addEventListener("submit", searchCity);
 
 function getMyCity(position) {
   let units = "metric";
-  let lat = position.coordinates.latitude;
-  let lon = position.coordinates.longitude;
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
   let apiKey = "2607db43507580fb79e389f9t9o21fab";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&units=${units}&key=${apiKey}`;
 
@@ -76,7 +75,7 @@ function getMyLocation(event) {
 let myLocation = document.querySelector("#my-location");
 myLocation.addEventListener("click", getMyLocation);
 
-getLocation("Willow Creek");
+getLocation("Kyiv");
 // function changeToCelsius(event) {
 //   event.preventDefault();
 //   let cUnit = 17;
