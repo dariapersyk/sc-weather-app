@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-    <title>Project</title>
+    <title>Weather App</title>
     <script
       src="https://kit.fontawesome.com/a591f954a9.js"
       crossorigin="anonymous"
@@ -72,13 +72,13 @@
                   <a href="My location" id="my-location"> My location </a>
                 </li>
                 <li class="city">
-                  <a href="Odesa">Odesa</a>
+                  <a href="Odesa" id="odesa-location">Odesa</a>
                 </li>
                 <li class="city">
-                  <a href="Lviv">Lviv</a>
+                  <a href="Lviv" id="lviv-location">Lviv</a>
                 </li>
                 <li class="city">
-                  <a href="Dnipro"> Dnipro </a>
+                  <a href="Dnipro" id="dnipro-location"> Dnipro </a>
                 </li>
               </ul>
             </div>
@@ -90,13 +90,13 @@
             <div class="col-3">
               <div class="current-temp">
                 <span class="current-temp" id="current-temp"></span>
-                <span>
-                  <a href="#" class="unit" id="cUnit">°C</a>
-
-                  <a href="#" class="unit" id="fUnit"></a>
-                </span>
-                <br />
-                <i class="fa-solid fa-cloud-sun icon"></i>
+                <span
+                  ><a href="#" class="unit" id="cUnit">°C |</a
+                  ><a href="#" class="unit" id="fUnit">°F</a></span
+                >
+                <div class="conditions-img">
+                  <i class="fa-solid fa-cloud-sun icon"></i>
+                </div>
               </div>
             </div>
             <div class="col-5">

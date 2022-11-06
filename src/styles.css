@@ -59,7 +59,7 @@ footer {
 
 .current-temp {
   font-size: 3rem;
-  text-align: center;
+  text-align: right;
 }
 .current-cond {
   font-weight: 300;
@@ -69,6 +69,7 @@ footer {
   font-size: 1rem;
   position: relative;
   bottom: 1.45rem;
+  right: 0.3rem;
   text-decoration: none;
 }
 
@@ -81,4 +82,9 @@ footer {
 
 .min-temp {
   opacity: 50%;
+}
+
+.conditions-img {
+  text-align: center;
+  font-size: 3.2rem;
 }
