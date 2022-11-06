@@ -78,6 +78,33 @@ function getMyLocation(event) {
 let myLocation = document.querySelector("#my-location");
 myLocation.addEventListener("click", getMyLocation);
 
+function getOdesaLocation(event) {
+  event.preventDefault();
+  let city = "Odesa";
+  getLocation(city);
+}
+
+let odesaCity = document.querySelector("#odesa-location");
+odesaCity.addEventListener("click", getOdesaLocation);
+
+function getLvivLocation(event) {
+  event.preventDefault();
+  let city = "Lviv";
+  getLocation(city);
+}
+
+let lvivCity = document.querySelector("#lviv-location");
+lvivCity.addEventListener("click", getLvivLocation);
+
+function getDniproLocation(event) {
+  event.preventDefault();
+  let city = "Dnipro";
+  getLocation(city);
+}
+
+let dniproCity = document.querySelector("#dnipro-location");
+dniproCity.addEventListener("click", getDniproLocation);
+
 getLocation("Kyiv");
 // function changeToCelsius(event) {
 //   event.preventDefault();
