@@ -86,16 +86,20 @@ footer {
 .unit {
   font-size: 1rem;
   position: relative;
-  bottom: 1.45rem;
-  right: 0.3rem;
-  text-decoration: none;
+  bottom: 2.1rem;
+  right: 0.8rem;
 }
 
 .forecast {
   text-align: center;
 }
 .icon {
-  color: #744986;
+  color: #be3599;
+  padding: 10px 12px;
+}
+
+button.my-location {
+  padding: 0;
 }
 
 .min-temp {
@@ -107,9 +111,22 @@ footer {
 }
 
 .link {
-  color: #744986;
+  color: #be3599;
 }
 
 .link:hover {
-  color: #e886a7;
+  color: #5d2c7e;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.unit .active {
+  color: #000;
+  cursor: default;
+}
+
+i.icon:hover {
+  color: #fff;
 }
