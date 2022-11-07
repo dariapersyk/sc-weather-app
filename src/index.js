@@ -34,16 +34,20 @@ function showConditions(response) {
   let icon = document.querySelector("#current-icon");
 
   celsiusTemp = response.data.temperature.current;
+  celsiusFeelsLike = response.data.temperature.feels_like;
 
   currentCity.innerHTML = response.data.city;
   currentTemperature.innerHTML = Math.round(response.data.temperature.current);
   wind.innerHTML = response.data.wind.speed;
   humidity.innerHTML = response.data.temperature.humidity;
-  feeling.innerHTML = Math.round(response.data.temperature.feels_like);
+  feeling.innerHTML = `${Math.round(response.data.temperature.feels_like)}°C`;
   conditions.innerHTML = response.data.condition.description;
   currentDate.innerHTML = formatDate(response.data.time * 1000);
   icon.setAttribute("src", response.data.condition.icon_url);
   icon.setAttribute("alt", response.data.condition.icon);
+
+  fLink.classList.remove("active");
+  cLink.classList.add("active");
 }
 
 function getLocation(city) {
@@ -117,6 +121,7 @@ let kyivCity = document.querySelector("#kyiv-location");
 kyivCity.addEventListener("click", getKyivLocation);
 
 let celsiusTemp = null;
+let celsiusFeelsLike = null;
 
 function changeToFahrenheit(event) {
   event.preventDefault();
@@ -125,6 +130,9 @@ function changeToFahrenheit(event) {
   currentTemperature.innerHTML = Math.round(fTemp);
   cLink.classList.remove("active");
   fLink.classList.add("active");
+  let fahrenheitFeelsLike = (celsiusFeelsLike * 9) / 5 + 32;
+  let feeling = document.querySelector("#feels-like");
+  feeling.innerHTML = `${Math.round(fahrenheitFeelsLike)}°F`;
 }
 
 function changeToCelsius(event) {
@@ -133,6 +141,8 @@ function changeToCelsius(event) {
   currentTemperature.innerHTML = Math.round(celsiusTemp);
   fLink.classList.remove("active");
   cLink.classList.add("active");
+  let feeling = document.querySelector("#feels-like");
+  feeling.innerHTML = `${Math.round(celsiusFeelsLike)}°C`;
 }
 
 let fLink = document.querySelector("#fUnit");
