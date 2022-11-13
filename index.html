@@ -40,10 +40,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-5">
-            <div class="date">
-              <h2 class="day-week" id="current-time"></h2>
-            </div>
+          <div class="col-5 details">
+            <h3>Last updated:</h3>
           </div>
           <div class="col-6 search-group">
             <form id="search">
@@ -74,13 +72,8 @@
         </div>
         <div class="row">
           <div class="col-5">
-            <div class="forecast-short">
-              <h3>
-                <a href="Today" class="link"> Today</a>
-              </h3>
-              <h3>
-                <a href="Tomorrow" class="link"> Tomorrow </a>
-              </h3>
+            <div class="date">
+              <h2 class="day-week" id="current-time"></h2>
             </div>
           </div>
           <div class="col-7 navigation">
@@ -102,10 +95,11 @@
         </div>
         <div class="conditions">
           <div class="row align-items-center">
+            <div class="col"></div>
             <div class="col-3 conditions-img">
               <img src="" id="current-icon" alt="" />
             </div>
-            <div class="col-4 current-temp">
+            <div class="col-3 current-temp">
               <span class="current-temp" id="current-temp"></span>
               <span class="unit">°C</span>
             </div>
@@ -120,9 +114,7 @@
             </div>
           </div>
         </div>
-        <div class="forecast-long">
-          <div class="row" id="forecast"></div>
-        </div>
+        <div class="row" id="forecast"></div>
       </div>
       <footer>
         <a

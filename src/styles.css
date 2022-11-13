@@ -10,12 +10,11 @@ h1 {
 }
 h2 {
   font-size: 1.2rem;
-  margin-top: 1rem;
 }
+
 h3 {
   font-size: 1rem;
   display: inline;
-  margin-right: 0.5rem;
 }
 
 h4 {
@@ -43,8 +42,8 @@ footer {
 .app {
   background: radial-gradient(
     circle at 10% 20%,
-    rgba(216, 241, 230, 0.46) 0.1%,
-    rgba(233, 226, 226, 0.28) 90.1%
+    rgba(241, 216, 237, 0.529) 0.1%,
+    rgba(231, 226, 233, 0.28) 90.1%
   );
   box-shadow: 0px 0px 7px #d8d5e6;
 }
@@ -59,14 +58,14 @@ footer {
   text-align: right;
 }
 
-.navigation {
-  padding-right: 0;
+.details {
+  margin-top: 1rem;
 }
 
 .conditions,
 .forecast {
   font-size: 0.9rem;
-  margin: 0.8rem auto;
+  margin: 0.5rem auto;
   padding: 0.5rem;
   border: 1px solid transparent;
   border-radius: 8px;
