@@ -23,6 +23,35 @@ function formatDate(timestamp) {
   return `${day}, ${hours}:${minutes}`;
 }
 
+function showForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastHTML = "";
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-2" id="forecast">
+              <div class="forecast">
+                <h5>${day}</h5>
+                <div class="icon">
+                  <i class="fa-solid fa-cloud-showers-heavy"></i>
+                </div>
+                <div class="max-temp">+16°</div>
+                <div class="min-temp">+9°</div>
+              </div>
+            </div>`;
+    forecastElement.innerHTML = forecastHTML;
+  });
+}
+
+function getForecast(city) {
+  let units = "metric";
+  let apiKey = "2607db43507580fb79e389f9t9o21fab";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&units=${units}&key=${apiKey}`;
+  axios.get(apiUrl).then(showForecast);
+}
+
 function showConditions(response) {
   let currentCity = document.querySelector("#heading");
   let currentTemperature = document.querySelector("#current-temp");
@@ -48,6 +77,8 @@ function showConditions(response) {
 
   fLink.classList.remove("active");
   cLink.classList.add("active");
+
+  getForecast(response.data.city);
 }
 
 function getLocation(city) {
